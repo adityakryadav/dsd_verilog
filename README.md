@@ -20,17 +20,17 @@ Contents
 - File: `src/boolean_expressions.v`
 - TB: `tb/boolean_expressions_tb.v`
 
-3) Multiplexers (4x1 and 8x1)
-- Files: `src/mux4.v`, `src/mux8.v`
-- TB: `tb/mux4_tb.v`, `tb/mux8_tb.v`
+3) Multiplexers (2x1 and 4x1)
+- Files: `src/mux2to1.v`, `src/mux4.v`
+- TB: `tb/mux2to1_tb.v`, `tb/mux4_tb.v`
 
 4) Priority Encoder (8-to-3, MSB priority)
 - File: `src/priority_encoder8.v`
 - TB: `tb/priority_encoder8_tb.v`
 
-5) Decoder (3-to-8 one-hot)
-- File: `src/decoder3to8.v`
-- TB: `tb/decoder3to8_tb.v`
+5) Decoder (2-to-4 one-hot)
+- File: `src/decoder2to4.v`
+- TB: `tb/decoder2to4_tb.v`
 
 6) Half Adder and Full Adder
 - Files: `src/half_adder.v`, `src/full_adder.v`
@@ -72,14 +72,14 @@ Examples (PowerShell):
 iverilog -o build/gates_tb tb/gates_tb.v src/gates.v; vvp build/gates_tb
 
 # Multiplexers
+iverilog -o build/mux2_tb tb/mux2to1_tb.v src/mux2to1.v; vvp build/mux2_tb
 iverilog -o build/mux4_tb tb/mux4_tb.v src/mux4.v; vvp build/mux4_tb
-iverilog -o build/mux8_tb tb/mux8_tb.v src/mux8.v; vvp build/mux8_tb
 
 # Priority encoder
 iverilog -o build/pe_tb tb/priority_encoder8_tb.v src/priority_encoder8.v; vvp build/pe_tb
 
 # Decoder
-iverilog -o build/dec_tb tb/decoder3to8_tb.v src/decoder3to8.v; vvp build/dec_tb
+iverilog -o build/dec_tb tb/decoder2to4_tb.v src/decoder2to4.v; vvp build/dec_tb
 
 # Adders
 iverilog -o build/ha_tb tb/half_adder_tb.v src/half_adder.v; vvp build/ha_tb
